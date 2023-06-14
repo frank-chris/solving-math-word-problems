@@ -266,7 +266,7 @@ def test_model(args, test_pairs, generate_num_ids, encoder, predict, generate, m
             logger.info("testing time: {}".format(time_since(time.time() - start)))
             logger.info("------------------------------------------------------")
         df = pd.DataFrame({'indices':indices, 'mi_type':mi_type, 'results':results, 'targets':targets})
-        df.to_csv(os.path.join(args.output_dir, epoch + '.csv'), index=False)
+        df.to_csv(os.path.join(args.output_dir, 'error_samples', epoch + '.csv'), index=False)
 
     return (equation_ac, value_ac, eval_total)
 
